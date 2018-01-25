@@ -11,6 +11,10 @@ class App extends Component {
     };
   }
 
+  onClear = () => {
+    this.setState({ todos: [] })
+  }
+
   onChange = (e) => {
     this.setState({ todo: e.target.value });
   }
@@ -32,6 +36,7 @@ class App extends Component {
           <button>Add It!</button>
         </form>
         <Todos todos={this.state.todos} />
+        <button onClick={this.onClear}>Clear It All!</button>
       </div>
     );
   }
