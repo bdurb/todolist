@@ -7,12 +7,12 @@ class App extends Component {
     super(props);
     this.state = {
       todo: '',
-      todos: [],
+      todos: []
     };
   }
 
   onClear = () => {
-    this.setState({ todos: [] })
+    this.setState({ todos: [] });
   }
 
   onChange = (e) => {
@@ -36,7 +36,7 @@ class App extends Component {
           <button>Add It!</button>
         </form>
         <Todos todos={this.state.todos} />
-        <button onClick={this.onClear}>Clear It All!</button>
+        {this.state.todos.length > 0 ? <button onClick={this.onClear}>Clear It All!</button> : null}
       </div>
     );
   }
