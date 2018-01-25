@@ -9,8 +9,6 @@ class App extends Component {
       todo: '',
       todos: [],
     };
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange = (e) => {
@@ -28,11 +26,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <form onSubmit={ this.onSubmit }>
+      <h1>To Do List</h1>
+        <form className="App" onSubmit={ this.onSubmit }>
           <input value={ this.state.todo } onChange={ this.onChange } />
           <button>Add It!</button>
         </form>
-        <List todos={this.state.todos} />
+        <Todos todos={this.state.todos} />
       </div>
     );
   }
