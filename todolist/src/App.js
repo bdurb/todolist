@@ -32,7 +32,7 @@ class App extends Component {
       <div className="App">
       <h1>To Do List</h1>
         <form className="App" onSubmit={ this.onSubmit }>
-          <input value={ this.state.todo } onChange={ this.onChange } />
+          <input placeholder="I need to do..." value={ this.state.todo } onChange={ this.onChange } />
           <button>Add It!</button>
         </form>
         <Todos todos={this.state.todos} />
