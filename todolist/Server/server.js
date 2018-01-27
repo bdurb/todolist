@@ -6,6 +6,7 @@ const STATUS_USER_ERROR = 422;
 server.get('/',(req, res) => {
     res.send({hello: 'Hello World'})
   })
-server.listen(3001, () => {
-  console.log("Running on port 3001")
+const httpserver = server.listen(3001, () => {
+  const { address, port} = httpserver.address()
+  console.log(`listening on http://${address}:${port}`)
 })
