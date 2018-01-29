@@ -1,7 +1,7 @@
 module.exports = (app) => {
   const controllerMethods = require('../controllers/todosController');
 
-  app.route('/posts')
+  app.route('/todos')
     .get(controllerMethods.listTodos)
     .post(controllerMethods.createTodo);
 };
