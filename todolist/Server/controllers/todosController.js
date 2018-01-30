@@ -32,5 +32,5 @@ const listTodos = (req, res) => {
 
 module.exports = {
   createTodo,
-  listTodo,
+  listTodos,
 };

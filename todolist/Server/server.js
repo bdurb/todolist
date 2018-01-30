@@ -15,7 +15,7 @@ const connect = mongoose.connect(
 connect.then(() => {
   const port = 3333
   const routes = require('./routes/routes');
-  Routes(server);
+  routes(server);
   server.listen(3333);
   console.log(`Server listening on port ${port}`);
 }, (err) => {
