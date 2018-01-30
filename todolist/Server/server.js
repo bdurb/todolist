@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const Todo = require('./models/todo');
 
 const server = express();
-server.use(bodyParse.json());
+server.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
 const connect = mongoose.connect(
