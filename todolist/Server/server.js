@@ -1,12 +1,24 @@
+const bodyParser = require('body-parser');
 const express = require('express');
+const mongoose = require('mongoose')
+
+const Todo = require('./models/todo');
+
 const server = express();
+server.use(bodyParse.json());
 
-const STATUS_USER_ERROR = 422;
+mongoose.Promise = global.Promise;
+const connect = mongoose.connect(
+  'mongodb://localhost/Tododb',
+  { useMongoClient: true }
+);
 
-server.get('/',(req, res) => {
-    res.send({hello: 'Hello World'})
-  })
-const httpserver = server.listen(3001, () => {
-  const { address, port} = httpserver.address()
-  console.log(`listening on http://${address}:${port}`)
-})
+connect.then(() => {
+  const port = 3000
+  const routes = require('./routes/routes');
+  Routes(server);
+  server.listen(3000);
+  console.log(`Server listening on port ${port}`);
+}, (err) => {
+  console.log('ERROR: failed to connect to MongoDB');
+});
