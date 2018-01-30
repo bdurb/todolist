@@ -7,7 +7,7 @@ const STATUS_USER_ERROR = 422;
 const createTodo = (req, res) => {
   const {todo} = req.body;
   const newTodo = new Todo({ todo });
-  newPost.save()
+  newTodo.save()
     .then((newTodo) => {
       res.json(newTodo);
     })
