@@ -10,14 +10,14 @@ server.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 const connect = mongoose.connect(
   'mongodb://localhost/Tododb',
-  { useMongoClient: true }
+  //{ useMongoClient: true }
 );
 
 connect.then(() => {
   const port = 3000
   const routes = require('./routes/routes');
   Routes(server);
-  server.listen(3000);
+  server.listen(3333);
   console.log(`Server listening on port ${port}`);
 }, (err) => {
   console.log('ERROR: failed to connect to MongoDB');
