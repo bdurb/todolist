@@ -14,7 +14,7 @@ const connect = mongoose.connect(
 );
 
 connect.then(() => {
-  const port = 3000
+  const port = 3333
   const routes = require('./routes/routes');
   Routes(server);
   server.listen(3333);
