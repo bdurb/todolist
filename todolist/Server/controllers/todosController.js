@@ -5,10 +5,10 @@ const Todo = mongoose.model('Todo');
 const STATUS_USER_ERROR = 422;
 
 const createTodo = (req, res) => {
-  const {todo} = req.query;
+  const {todo} = req.body;
   const newTodo = new Todo({ todo });
   newPost.save()
-    .then((newPost) => {
+    .then((newTodo) => {
       res.json(newTodo);
     })
     .catch((err) => {
