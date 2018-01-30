@@ -10,7 +10,6 @@ server.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 const connect = mongoose.connect(
   'mongodb://localhost/Tododb',
-  //{ useMongoClient: true }
 );
 
 connect.then(() => {
