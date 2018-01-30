@@ -19,10 +19,10 @@ const createTodo = (req, res) => {
 
 const listTodos = (req, res) => {
   Todo.find({})
-    .populate('todo')
+    .populate('todos')
     .exec()
     .then((todo) => {
-      res.json(todos);
+      res.json(todo);
     })
     .catch((err) => {
       res.status(STATUS_USER_ERROR);
