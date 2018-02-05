@@ -33,10 +33,17 @@ class App extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      todo: '',
-      todos: [...this.state.todos, this.state.todo]
-    });
+    const todo = {todo: this.state.todo}
+    axios.post('http://localhost:3333/todos', todo)
+      .then((data) => {
+        this.setState({todo: ''});
+        setTimeout(() => {
+          this.componentDidMount();
+        }, 200)
+      })
+      .catch((err) => {
+        console.log('Failed to Post')
+      });
   }
 
   render() {
@@ -50,7 +57,7 @@ class App extends Component {
         </form>
         {todos.map((to) => {
           return(
-           <form className="app"> {to.todo} </form>
+           <form className="app" key={to._id}> {to.todo} </form>
           )
         })}
         {this.state.todos.length > 0 ? <button onClick={this.onClear}>Clear It All!</button> : null}
