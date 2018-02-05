@@ -12,6 +12,16 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    axios.get('http://localhost:3333/todos')
+      .then((data) => {
+        this.setState({todos: data.data});
+      })
+      .catch((err) => {
+        console.log('Error')
+      })
+  }
+
   onClear = () => {
     this.setState({ todos: [] });
   }
