@@ -3,5 +3,5 @@ module.exports = (app) => {
 
   app.route('/todos')
     .get(controllerMethods.listTodos)
-    .post(controllerMethods.createTodo);
+    .post(controllerMethods.createTodo)
 };

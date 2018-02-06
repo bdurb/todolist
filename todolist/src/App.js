@@ -17,10 +17,17 @@ class App extends Component {
         this.setState({todos: data.data});
       })
       .catch((err) => {
-        console.log('Error')
+        console.log('Error');
       })
   }
 
+  // onClear = () => {
+  //   axios.delete('http://localhost:3333/todos/',{todos: []})
+  //     .then(res => {
+  //       this.setState({todos: []});
+  //       console.log(res.data);
+  //     })
+  //}
   onClear = () => {
     this.setState({ todos: [] });
   }
@@ -37,7 +44,7 @@ class App extends Component {
         this.setState({todo: ''});
         setTimeout(() => {
           this.componentDidMount();
-        }, 200)
+        })
       })
       .catch((err) => {
         console.log('Failed to Post')
