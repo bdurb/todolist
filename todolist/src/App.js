@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import Todos from './Todos';
 import './App.css';
 import axios from 'axios';
 
@@ -15,7 +14,6 @@ class App extends Component {
   componentDidMount() {
     axios.get('http://localhost:3333/todos')
       .then((data) => {
-        console.log(data)
         this.setState({todos: data.data});
       })
       .catch((err) => {
