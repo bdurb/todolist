@@ -21,13 +21,6 @@ class App extends Component {
       })
   }
 
-  // onClear = () => {
-  //   axios.delete('http://localhost:3333/todos/',{todos: []})
-  //     .then(res => {
-  //       this.setState({todos: []});
-  //       console.log(res.data);
-  //     })
-  //}
   onClear = () => {
     this.setState({ todos: [] });
   }
