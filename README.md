@@ -1,7 +1,7 @@
 # todolist
 
-## Todo List featuring a React front end
-## Node.js and express server
+## Todo List featuring React
+## Node/express server
 ## mongo database.
 
 
